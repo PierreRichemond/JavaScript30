@@ -9,7 +9,7 @@
   <p onClick="makeGreen()">×BREAK×DOWN×</p>
 
   <script>
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'Hugo', age: 8 }];
 
     function makeGreen() {
       const p = document.querySelector('p');
@@ -18,29 +18,48 @@
     }
 
     // Regular
-
+  console.log('hello')
     // Interpolated
-
+  console.log('hello I am a %s string', "nice guy");
     // Styled
-
+  console.log("%c I am some great text", 'font-size :30px;');
     // warning!
-
+  console.warn('oh no warned !');
     // Error :|
-
+  console.error('Oops');
     // Info
-
+  console.info('here we are');
     // Testing
-
+  const p = document.querySelector('p');
+  console.assert(1 === 1, "this is true");
+  console.assert(2 === 1, "this is wrong");
     // clearing
-
+  console.clear();
     // Viewing DOM Elements
-
+  console.log("p")
+  console.dir(p)
+  console.clear();
     // Grouping together
-
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`)
+      console.log(`here is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.year} years old`)
+      console.groupEnd(`${dog.name}`)
+    })
     // counting
+    console.count('pierre');
+    console.count('pierre');
+    console.count('pierre');
+    console.count('pierre');
 
     // timing
-
+    console.time("fetching data");
+    fetch('https://github.com/user/PierreRichemond')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd("fetching data");
+      console.log(data);
+    });
   </script>
 </body>
 </html>
